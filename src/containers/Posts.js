@@ -1,23 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getPostsData } from '../redux/actions';
 
-const Posts = ({ cats }) => (
-  <div className="app-content">
-    Posts
-    <ul>
-      {cats.map(cat => (
-        <li key={`cat-${cat}`}>{cat}</li>
-      ))}
-    </ul>
-  </div>
-);
+class Posts extends Component {
+  componentDidMount() {
+    const { getPostsData } = this.props;
+
+    getPostsData();
+  }
+
+  render() {
+    const { posts } = this.props;
+
+    return (
+      <div className="app-content">
+        <h3>Posts</h3>
+        <div className="posts-list">
+          {posts.map(post => (
+            <div key={`post-${post.id}`}>
+              <h6>{post.title}</h6>
+              <span>{post.body}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = ({ plugins }) => {
   return {
-    cats: plugins.example.cats,
+    posts: plugins.example.posts,
   };
 };
 
-export default connect(mapStateToProps)(Posts);
+export default connect(
+  mapStateToProps,
+  { getPostsData }
+)(Posts);
