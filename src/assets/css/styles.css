@@ -1,0 +1,17 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.cats-posts-application {
+  .nav {
+    style: none;
+  }
+
+  .nav-item {
+    display: inline;
+    padding: 15px;
+    background: #FEFEFE;
+  }
+
+  .app-content {
+    padding: 10px;
+  }
+}
