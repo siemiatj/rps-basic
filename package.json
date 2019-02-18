@@ -5,7 +5,6 @@
   "author": "Kuba Siemiatkowski <kuba@saskla.cz>",
   "scripts": {
     "start": "node host.js",
-    "dev": "webpack --config webpack.config.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint src --fix",
     "stylelint": "stylelint 'src/assets/**/*.css'"
