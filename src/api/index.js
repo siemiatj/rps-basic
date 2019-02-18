@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-export function getPosts(userId) {
+export function getPosts() {
   return axios.get('https://jsonplaceholder.typicode.com/posts');
 }
