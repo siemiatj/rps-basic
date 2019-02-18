@@ -1,8 +1,10 @@
 {
   "name": "rps-basic",
+  "version": "0.0.2",
+  "description": "Basic plugin example for the react-plugin-system",
+  "author": "Kuba Siemiatkowski <kuba@saskla.cz>",
   "scripts": {
     "start": "node host.js",
-    "dev": "webpack --config webpack.config.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint src --fix",
     "stylelint": "stylelint 'src/assets/**/*.css'"
