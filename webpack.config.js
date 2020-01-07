@@ -48,7 +48,6 @@ module.exports = {
                 require('postcss-color-function'),
                 require('postcss-url')(),
                 require('precss')(),
-                require('autoprefixer')({ browsers: ['last 2 versions'] }),
               ],
             },
           },

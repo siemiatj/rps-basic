@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-// TODO: Remove React from bundle, treat it as a globally available variable
 module.exports = {
   mode: 'production',
   entry: ['./src/index.jsx'],
@@ -14,6 +14,14 @@ module.exports = {
     publicPath: '/',
     libraryTarget: 'commonjs2',
   },
+  externals: [
+    /^react\/?.*$/,
+    /^react-boostrap\/?.*$/,
+    /^react-dom\/?.*$/,
+    /^react-redux\/?.*$/,
+    /^react-router\/?.*$/,
+    /^axios\/?.*$/,
+  ],
   module: {
     rules: [
       {
@@ -46,7 +54,6 @@ module.exports = {
                 }),
                 require('postcss-color-function'),
                 require('postcss-url')(),
-                require('autoprefixer')({ browsers: ['last 2 versions'] }),
                 require('precss')(),
               ],
             },
@@ -62,4 +69,11 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
   },
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: "disabled",
+      generateStatsFile: true,
+      statsFilename: 'BundleAnalyzerStats.json'
+    }),
+  ]
 };
