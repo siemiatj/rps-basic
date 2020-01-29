@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import '../assets/css/styles.css';
 
@@ -13,26 +13,10 @@ const App = ({ children }) => (
               <Link to={'/'}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link
-                to={'/plugins/cats'}
-                activeStyle={{
-                  textDecoration: 'none',
-                  color: 'black',
-                }}
-              >
-                Cats
-              </Link>
+              <Link to={'/plugins/cats'}>Cats</Link>
             </li>
             <li className="nav-item">
-              <Link
-                to={'/plugins/posts'}
-                activeStyle={{
-                  textDecoration: 'none',
-                  color: 'black',
-                }}
-              >
-                Posts
-              </Link>
+              <Link to={'/plugins/posts'}>Posts</Link>
             </li>
           </ul>
         </header>

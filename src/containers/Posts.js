@@ -35,7 +35,4 @@ const mapStateToProps = ({ plugins }) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { getPostsData }
-)(Posts);
+export default connect(mapStateToProps, { getPostsData })(Posts);
